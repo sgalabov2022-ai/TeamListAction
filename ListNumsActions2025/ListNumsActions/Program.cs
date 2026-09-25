@@ -19,17 +19,46 @@
                         int num = int.Parse(cmd[2]);
                         nums.Insert(index,num);
                         break;
+
                     case "print":
                         Console.WriteLine(string.Join(" ", nums));
                         break;
+
                     case "contains":
                         
-                        //TODO
+                        break;
+
+                    case "del":
+
+                        break;
+
+                    case "remove":
+
+                        break;
+
+                    case "add":
+
+                        break;
+
+                    case "countl":
+
+                        break;
+
+                    case "countOdds":
+
+                        break;
+
+                    case "countEvens":
+
+                        break;
+
+                    case "sumAll":
+
                         break;
 
 
-                    //TO DO
                     default:
+                        Console.WriteLine("Invalid command");
                         break;
                 }
             }
