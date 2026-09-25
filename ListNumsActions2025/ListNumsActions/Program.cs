@@ -1,7 +1,11 @@
-﻿namespace ListNumsActions
+﻿using System.Xml.Linq;
+
+namespace ListNumsActions
 {
     internal class Program
     {
+        private static int element;
+
         static void Main(string[] args)
         {
             List<int> nums = Console.ReadLine().Split().Select(int.Parse).ToList();
@@ -25,16 +29,23 @@
                         break;
 
                     case "contains":
-                        
-                        break;
+                        element = int.Parse(cmd[1]);
 
-                    case "del":
-
+                        Console.WriteLine(nums.Contains(element) ? "YES" : "NO");
                         break;
 
                     case "remove":
+                        index = int.Parse(cmd[1]);
 
+                        nums.RemoveAt(index);
                         break;
+
+                    case "del":
+                        element = int.Parse(cmd[1]);
+
+                        nums.Remove(element);
+                        break;
+
 
                     case "add":
 
