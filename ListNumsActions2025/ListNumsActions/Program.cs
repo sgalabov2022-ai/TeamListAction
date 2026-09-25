@@ -1,9 +1,12 @@
 ﻿using System.Globalization;
+﻿using System.Xml.Linq;
 
 namespace ListNumsActions
 {
     internal class Program
     {
+        private static int element;
+
         static void Main(string[] args)
         {
             List<int> nums = Console.ReadLine().Split().Select(int.Parse).ToList();
@@ -30,15 +33,17 @@ namespace ListNumsActions
 
                         break;
 
-                    case "del":
-
-                        break;
-
                     case "remove":
+                        index = int.Parse(cmd[1]);
 
+                        nums.RemoveAt(index);
                         break;
 
-                        //
+                    case "del":
+                        element = int.Parse(cmd[1]);
+
+                        nums.Remove(element);
+                        break;
 
                     case "add":
                         int number1 = int.Parse(cmd[1]);
